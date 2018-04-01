@@ -18,7 +18,6 @@ class Transaction {
 
     void cancelSale(Product product, User user) {
         String productName = product.name
-        user.balance += (product.price - calculateDiscount(product, user))
         user.cancelPurchase(product)
         emailService.sendCancellationEmail(user, productName)
     }
@@ -36,10 +35,9 @@ class Transaction {
         return discount
     }
 
-    List<Product> getAllPopularProducts(){
+    List<Product> getAllPopularProducts() {
         List<Product> popularProducts = Product.getCurrentProducts()
-        return popularProducts.findAll{it.isPopular}
-
+        return popularProducts.findAll { it.isPopular }
     }
 
 

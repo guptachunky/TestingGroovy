@@ -11,6 +11,10 @@ class UserSpec extends Specification {
 
 
 
+    def ""(){
+        User user=new User()
+
+    }
 
 
 
